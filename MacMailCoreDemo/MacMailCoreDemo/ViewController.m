@@ -13,11 +13,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initDefaultAccountSetting];
+    [self initDefaultSentMailAccountSetting];
     [self loadIndicatorEnabled:NO onActionButton:self.sendmailButton];
 }
 
-- (void)initDefaultAccountSetting {
+- (void)initDefaultSentMailAccountSetting {
     NSString *fromEmail = @"thucnt93@flomail.net";
     NSString *fromPassword = @"your pass";
     NSString *toEmail = @"thucan10@gmail.com";
@@ -36,8 +36,17 @@
     self.portTextField.stringValue = [NSString stringWithFormat:@"%ld", (long)defaultPort];
     self.hostTextField.stringValue = defaultHost;
     self.authTypeTextField.stringValue = [NSString stringWithFormat:@"%ld", (long)defaultAuthenType];
-    
-    
+}
+
+- (void)fillFetchInfo {
+    self.hostTextField.stringValue = @"imap.gmail.com";
+    self.portTextField.stringValue = @"993";
+    self.fromEmailTextField.stringValue = @"thanhthuc041293@gmail.com";
+    self.passWordTextField.stringValue = @"gmail pass";
+    self.toEmailTextField.stringValue = @"";
+    self.subjectTextfield.stringValue = @"";
+    self.bodyTextField.stringValue = @"";
+    self.authTypeTextField.stringValue = @"";
 }
 
 - (void)loadIndicatorEnabled:(BOOL)isEnabled onActionButton:(NSButton *)button {
@@ -53,8 +62,13 @@
 }
 
 - (IBAction)reset:(id)sender {
-    [self initDefaultAccountSetting];
+    [self initDefaultSentMailAccountSetting];
 }
+
+- (IBAction)fillFetch:(id)sender {
+    [self fillFetchInfo];
+}
+
 
 - (IBAction)sendMailTap:(id)sender {
     [self loadIndicatorEnabled:YES onActionButton:self.sendmailButton];
@@ -108,10 +122,10 @@
      */
     [self loadIndicatorEnabled:YES onActionButton:self.fetchMailButton];
     MCOIMAPSession *session = [[MCOIMAPSession alloc] init];
-    [session setHostname:@"imap.gmail.com"];
-    [session setPort:993];
-    [session setUsername:@"thanhthuc041293@gmail.com"];
-    [session setPassword:@"yourGmailPass"]; // Input your gmail pass
+    [session setHostname: self.hostTextField.stringValue];
+    [session setPort:[self.portTextField.stringValue intValue]];
+    [session setUsername:self.fromEmailTextField.stringValue];
+    [session setPassword:self.passWordTextField.stringValue]; // Input your gmail pass
     [session setConnectionType:MCOConnectionTypeTLS];
     
     MCOIMAPMessagesRequestKind requestKind = MCOIMAPMessagesRequestKindHeaders;
