@@ -22,5 +22,5 @@
 - hostname: some host name like: imap.gmail.com, smtp.gmail.com, smtp-mail.outlook.com...
 - fetch gmail: before test this feature, make use you turn off 2 factor verification in gmail account
 
-------*****------
-Note: this way is integrate Mac framework, for Mac static library way, please visit: https://github.com/MailCore/mailcore2/blob/master/build-mac/README.md
+------00000------
+- Note: this way is integrate Mac framework, for Mac static library way, please visit: https://github.com/MailCore/mailcore2/blob/master/build-mac/README.md
