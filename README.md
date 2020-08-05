@@ -1,4 +1,4 @@
-# MailCoreFramworkLib
+# MailCoreFramwork
 Step by step integrate mail core framework to Mac app
 
 1. Follow this instruction to integrate mailcore 2 to mac app not via cocoapod:
