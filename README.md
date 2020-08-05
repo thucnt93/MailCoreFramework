@@ -1,7 +1,6 @@
 # MailCore2Framwork integration demo
-Step by step integrate mail core framework to Mac app
 
-1. Follow this instruction to integrate mailcore 2 to mac app not via cocoapod ():
+1. Step by step integrate mailcore2 framework to Mac app:
 - Checkout MailCore2 into a directory relative to your project.
 - Under the build-mac directory, locate the mailcore2.xcodeproj file, and drag this into your Xcode project.
 - Link against MailCore 2 as a framework:
@@ -12,7 +11,7 @@ Step by step integrate mail core framework to Mac app
    - In Build Phase, expand copy file and change it's destination to "Frameworks"
    - Click the + icon and select MailCore.framework.
 
-2. In App Target -> Signing & Capabilities -> App sandbox:
+2. To allow mailcore function work properly, in Xcode -> App Target -> Signing & Capabilities -> App sandbox:
 - Enable Incoming connections server
 - Enable Outcoming connections server
 
