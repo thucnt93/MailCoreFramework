@@ -2,9 +2,9 @@
 Step by step integrate mail core framework to Mac app
 
 1. Follow this instruction to integrate mailcore 2 to mac app not via cocoapod ():
-  * Checkout MailCore2 into a directory relative to your project.
-  * Under the build-mac directory, locate the mailcore2.xcodeproj file, and drag this into your Xcode project.
-  * Link against MailCore 2 as a framework:
+- Checkout MailCore2 into a directory relative to your project.
+- Under the build-mac directory, locate the mailcore2.xcodeproj file, and drag this into your Xcode project.
+- Link against MailCore 2 as a framework:
    - Go to Build Phases from build target, then under 'Link Binary With Libraries', add MailCore.framework and Security.framework
    - To make sure to use LLVM C++ standard library Open Build Settings, scroll down to 'C++ Standard Library', and select libc++
    - Select target, in Build Phase, expand dependencies, add a Target Dependency of mailcore osx,
