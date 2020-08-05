@@ -20,6 +20,7 @@
 - username: mail,
 - pass: signin to mail 
 - hostname: some host name like: imap.gmail.com, smtp.gmail.com, smtp-mail.outlook.com...
+- For send mail, to easy test please using Flo account, if want to test outlook, yahoo or gmail, we must login before then using token,
 - fetch gmail: before test this feature, make use you turn off 2 factor verification in gmail account
 
 ------00000------
